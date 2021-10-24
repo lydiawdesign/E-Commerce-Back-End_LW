@@ -62,9 +62,9 @@ Use the `schema.sql` file in the `db` folder to create your database with MySQL 
 
 Your database should contain the following four models, including the requirements listed for each model:
 
-* `Category`
+* `Category`x
 
-  * `id`
+  * `id`x
 
     * Integer.
   
@@ -74,15 +74,15 @@ Your database should contain the following four models, including the requiremen
   
     * Uses auto increment.
 
-  * `category_name`
+  * `category_name`x
   
     * String.
   
     * Doesn't allow null values.
 
-* `Product`
+* `Product`x
 
-  * `id`
+  * `id`x
   
     * Integer.
   
@@ -92,13 +92,13 @@ Your database should contain the following four models, including the requiremen
   
     * Uses auto increment.
 
-  * `product_name`
+  * `product_name`x
   
     * String.
   
     * Doesn't allow null values.
 
-  * `price`
+  * `price`x
   
     * Decimal.
   
@@ -106,7 +106,7 @@ Your database should contain the following four models, including the requiremen
   
     * Validates that the value is a decimal.
 
-  * `stock`
+  * `stock`x
   
     * Integer.
   
@@ -116,15 +116,15 @@ Your database should contain the following four models, including the requiremen
   
     * Validates that the value is numeric.
 
-  * `category_id`
+  * `category_id`x
   
     * Integer.
   
     * References the `Category` model's `id`.
 
-* `Tag`
+* `Tag`x
 
-  * `id`
+  * `id`x
   
     * Integer.
   
@@ -134,13 +134,13 @@ Your database should contain the following four models, including the requiremen
   
     * Uses auto increment.
 
-  * `tag_name`
+  * `tag_name`x
   
     * String.
 
-* `ProductTag`
+* `ProductTag`x
 
-  * `id`
+  * `id`x
 
     * Integer.
 
@@ -150,13 +150,13 @@ Your database should contain the following four models, including the requiremen
 
     * Uses auto increment.
 
-  * `product_id`
+  * `product_id`x
 
     * Integer.
 
     * References the `Product` model's `id`.
 
-  * `tag_id`
+  * `tag_id`x
 
     * Integer.
 
