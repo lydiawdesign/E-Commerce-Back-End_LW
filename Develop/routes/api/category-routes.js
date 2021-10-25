@@ -45,6 +45,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async  (req, res) => {
   // create a new category
   try {
+    const categoryData = await Category.create(req.body);
     res.status(200).json(categoryData);
   } catch (err) {
     res.status(400).json(err);
@@ -80,7 +81,7 @@ router.delete('/:id', async  (req, res) => {
     });
 
     if (!categoryData) {
-      res.status(404).json({ message: 'No category found !' });
+      res.status(404).json({ message: 'No category found!' });
       return;
     }
 
