@@ -180,11 +180,11 @@ Note that the functionality for creating the many-to-many relationship for produ
 
 > **Hint**: Be sure to look at the mini-project code for syntax help and use your model's column definitions to figure out what `req.body` will be for POST and PUT routes!
 
-### Seed the Database
+### Seed the Database x
 
 After creating the models and routes, run `npm run seed` to seed data to your database so that you can test your routes.
 
-### Sync Sequelize to the Database on Server Start
+### Sync Sequelize to the Database on Server Start x
 
 Create the code needed in `server.js` to sync the Sequelize models to the MySQL database on server start.
 
