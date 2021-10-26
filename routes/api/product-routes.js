@@ -9,27 +9,24 @@ router.get('/', async (req, res) => {
   // be sure to include its associated Category and Tag data
   try {
     const productData = await Product.findAll({
-    attributes: ['id', 'product_name', 'price', 'stock', 'category_id'],
     incude: [
       {
         model: Category, 
-        attritubes: ['id', 'category_name'],
       },
       {
         model: Tag, 
-        attritubes: ['id', 'tag_name'],
       },
-    ]
+    ],
   })
   if (!productData) {
     res.status(404).json({ message: 'No Product found with this id!' });
     return;
   }
 
-  res.status(200).json(productData);
-} catch (err) {
-  res.status(500).json(err);
-}
+    res.status(200).json(productData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // get one product
@@ -41,11 +38,9 @@ router.get('/:id', (req, res) => {
       incude: [
         {
           model: Category, 
-          attritubes: ['id', 'category_name'],
         },
         {
           model: Tag, 
-          attritubes: ['id', 'tag_name'],
         },
       ]
     });
