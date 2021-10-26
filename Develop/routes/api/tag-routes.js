@@ -27,7 +27,10 @@ router.get('/:id', async (req, res) => {
   // be sure to include its associated Product data
   try {
     const tagData = await Tag.findByPk(req.params.id, {
-      include: [{ model: Product}]
+      include: [{ 
+        model: Product,
+      attributes: ['id','product_id', 'tag_id'],
+    }]
     });
 
     if (!tagData) {
@@ -51,9 +54,29 @@ router.post('/',  async (req, res) => {
   }
 });
 
-// router.put('/:id', async (req, res) => {
-//   // update a tag's name by its `id` value
-// });
+router.put('/:id', async (req, res) => {
+   // update a tag's name by its `id` value
+   try{
+    const tagData = await Tag.update(
+      {
+        tag_name: req.body.category_name
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+      );
+
+      if(!tagData){
+        res.status(404).json({message: 'There is no tag with that ID. Try again!'})
+      }
+
+      res.status(200).json(tagData);
+  } catch (err) {
+    res.status(400).json(err)
+  }
+});
 
 router.delete('/:id', async (req, res) => {
   // delete on tag by its `id` value
