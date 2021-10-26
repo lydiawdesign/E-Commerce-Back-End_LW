@@ -65,7 +65,7 @@ router.put('/:id', async (req, res) => {
         where: {
           id: req.params.id
         }
-      }
+      },
       );
 
       if(!tagData){
